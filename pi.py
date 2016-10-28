@@ -1,6 +1,6 @@
 from random import random
 from random import seed
-import numpy as np
+from math import sqrt
 
 def main():
     N = int(input("n:"))
@@ -18,9 +18,8 @@ def main():
 
 
 
-    print("pi: " + str(4*M/N))
-    print("mean: " + str(np.mean(points)))
-    print("std: " + str(np.std(points)))
-    print("std/sqrt(n): " + str(np.std(points)/np.sqrt(N)))
+    pi = 4*M/N
+    print("pi: " + str(pi))
+    print("statistical error: " + str(pi/sqrt(N)))
 
 main()
