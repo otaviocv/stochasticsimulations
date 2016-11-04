@@ -51,7 +51,7 @@ def main():
     plt.hist(velocities[2], alpha=0.5)
     plt.hist(velocities[1], alpha=0.5)
     plt.hist(velocities[0], alpha=0.5)
-    plt.legend((p1[0], p2[0], p3[0], p4[0]), (str(gamma[0]), str(gamma[1]),
+    plt.legend((p4[0], p3[0], p2[0], p1[0]), (str(gamma[0]), str(gamma[1]),
         str(gamma[2]), str(gamma[3])))
     plt.show()
     plt.plot(correlacao[0])
