@@ -15,7 +15,8 @@ def main():
     totalPassos = 1000000
     bolas = [0]*50 + [1]*50
     n = [totalBolas/2, totalBolas/2]
-    q = float(input("q:"))
+    p = float(input("p:"))
+    q = 1-p
     media = [0]*totalPassos
     media[0] += totalBolas/2
 
@@ -31,7 +32,7 @@ def main():
                     n[1] += 1
                     n[0] -= 1
         else:
-            if bernoulli(1-q):
+            if bernoulli(p):
                 bolas[troca] = 1 - bolas[troca]
                 if bolas[troca] == 0:
                     n[0] += 1
@@ -41,12 +42,11 @@ def main():
                     n[0] -= 1
         media[t] = n[0]/totalBolas
 
-
+    plt.xlabel('n/N')
+    plt.ylabel('Contagem')
+    plt.title('p = %f' % p)
     plt.hist(media[100000:])
-    plt.axis([0,1,0,600000])
+    plt.axis([0,1,0,900000])
     plt.show()
-
-
-
 
 main()
